@@ -86,8 +86,109 @@ button {
   border-radius: 5px;
   margin: 5px;
   cursor: pointer;
+}button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
+button:hover {
+  opacity: 0.8;
+}
+
 
 button:hover {
   opacity: 0.9;
+}
+.login-card {
+  max-width: 360px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: white;
+}
+
+.login-card .logo {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.login-card h2 {
+  margin: 10px 0;
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.login-card .subtitle {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-secondary);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.login-card {
+  max-width: 360px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.login-card .logo {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.login-card h2 {
+  margin: 10px 0;
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.login-card .subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-secondary);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
 }
