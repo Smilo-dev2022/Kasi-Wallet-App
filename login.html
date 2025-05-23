@@ -7,45 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <body>
   <div class="login-card">
     <img src="assets/logo.png" alt="Kasi Wallet Logo" class="logo" />
     <h2>Welcome Back</h2>
     <p class="subtitle">Login to your Kasi Wallet</p>
     <form id="loginForm">
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-<div id="console-message" class="console-message"></div>
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (!email || !password) {
-        showConsoleMessage("Please enter both email and password.");
-        return;
-    }
-
-    // Simulate user login
-    localStorage.setItem("user", JSON.stringify({
-        name: "Thabo M.",
-        email: email,
-        phone: "072-123-4567",
-        balance: "459.00"
-    }));
-
-    showConsoleMessage("Login successful!", "green");
-
-    setTimeout(() => {
-        window.location.href = "index.html";
-    }, 1000);
-});
-
-</form>
-<div id="console-message"></div>
->
+      <input type="text" id="phoneInput" placeholder="Phone or Email" required />
+      <input type="password" id="passwordInput" placeholder="Password" required />
+      <button type="submit" class="btn-primary">Login</button>
+    </form>
+    <div id="console-message" class="console-message"></div>
   </div>
-</body>
-
-
+  <script src="script.js"></script>
 </body>
 </html>
