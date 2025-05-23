@@ -8,29 +8,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a href="index.html"><img src="assets/KASI WALLET LOGO.png" alt="Kasi Wallet Logo" class="logo" /></a>
+    <body>
+  <header class="wallet-header">
+    <img src="assets/KASI WALLET LOGO.png" alt="Kasi Wallet Logo" class="logo" />
+    <h1>Kasi Wallet</h1>
+  </header>
 
+  <main class="wallet-main">
+    <div class="wallet-box">
+      <p><strong>Wallet ID:</strong> 1234-5678-9012</p>
+      <p><strong>Balance:</strong> R0.00</p>
+    </div>
 
-            <!-- Provided logo file in assets/ -->
-            <img src="assets/KASI WALLET LOGO.png" alt="Kasi Wallet Logo" class="logo">
-            <h1>Kasi Wallet</h1>
-        </div>
-    </header>
-    <main>
-        <section id="wallet-info">
-            <p><strong>Welcome:</strong> <span id="greetName">User</span></p>
-<!-- transactions.html -->
-<h2>Transaction History</h2>
-<ul id="transactionList"></ul>
+    <div class="action-buttons">
+      <button id="sendBtn" class="btn-primary">Send Money</button>
+      <button id="receiveBtn" class="btn-primary">Receive Money</button>
+      <button id="airtimeBtn" class="btn-primary">Buy Airtime</button>
+      <button id="scanBtn" class="btn-primary">Scan QR</button>
+    </div>
 
-            <p><strong>Balance:</strong> R0.00</p>
-        </section>
-        <section class="actions">
-            <button id="sendBtn">Send Money</button>
-            <button id="receiveBtn">Receive Money</button>
-            <button id="airtimeBtn">Buy Airtime</button>
-            <button id="scanBtn">Scan QR Code</button><button id="topupBtn">Top Up</button>
+    <div class="profile-link">
+      <a href="profile.html">View My Profile</a>
+    </div>
+  </main>
+
+  <footer>&copy; 2025 Kasi Wallet</footer>
+</body>
 
         </section>
     </main><div style="margin-top: 20px; text-align: center;">
