@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Simple login simulation
   const loginForm = document.getElementById("loginForm");
+
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
         phone: "072-123-4567",
         balance: "459.00"
       }));
-      window.location.href = "index.html"; // Go to dashboard
+      window.location.href = "index.html";
+    });
+  }
+
     });
   }
 document.getElementById("sendBtn").onclick = () => {
@@ -33,10 +36,12 @@ document.getElementById("sendBtn").onclick = () => {
     location.reload();
 };
 
-  // Load profile info
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user) {if (!localStorage.getItem("user")) {
-  window.location.href = "login.html";
+    const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) {
+    // redirect to login if not found
+    window.location.href = "login.html";
+  }
+
 }
 
     const set = (id, value) => {
@@ -65,3 +70,10 @@ function logout() {
 
   }
 };
+function showConsoleMessage(message, color = "red") {
+    const msgDiv = document.getElementById("console-message");
+    if (msgDiv) {
+        msgDiv.textContent = message;
+        msgDiv.style.color = color;
+    }
+}

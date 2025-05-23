@@ -266,3 +266,10 @@ button:hover {
   margin-top: 20px;
   font-weight: bold;
 }
+#console-message {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: red; /* Default color */
+    text-align: center;
+}
