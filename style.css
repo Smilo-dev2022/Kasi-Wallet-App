@@ -273,3 +273,8 @@ button:hover {
     color: red; /* Default color */
     text-align: center;
 }
+.console-message {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
