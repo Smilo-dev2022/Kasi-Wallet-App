@@ -15,22 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      // Get input values from the new input fields
-      const phoneOrEmail = document.getElementById("phoneInput")?.value.trim() || "";
-      const password = document.getElementById("passwordInput")?.value || "";
-      if (!phoneOrEmail || !password) {
-        showConsoleMessage("Please enter both phone/email and password.", "orange");
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const validEmail = "admin@kasiwallet.com";
+      const validPassword = "admin123";
+
+      if (!email || !password) {
+        showConsoleMessage("Please enter both email and password.", "red");
         return;
       }
-      // Simulate login success (replace with real auth logic)
-      if ((phoneOrEmail === "thabo@example.com" || phoneOrEmail === "072-123-4567") && password === "password123") {
+
+      if (email === validEmail && password === validPassword) {
         localStorage.setItem("user", JSON.stringify({
           name: "Thabo M.",
-          email: "thabo@example.com",
+          email: email,
           phone: "072-123-4567",
           balance: "459.00"
         }));
-        showConsoleMessage("Login successful! Redirecting...", "green");
+
+        showConsoleMessage("Login successful!", "green");
         setTimeout(() => {
           window.location.href = "index.html";
         }, 1000);
@@ -39,4 +43,43 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Auto-fill user data and redirect if not logged in
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (["index.html", "profile.html"].includes(window.location.pathname.split("/").pop()) && !user) {
+    window.location.href = "login.html";
+  }
+
+  const set = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
+
+  if (user) {
+    set("userName", user.name);
+    set("userEmail", user.email);
+    set("userPhone", user.phone);
+    set("userBalance", "R" + user.balance);
+    const greetName = document.getElementById("greetName");
+    if (greetName) greetName.textContent = user.name;
+  }
+
+  // Logout function
+  const logoutButtons = document.querySelectorAll(".logoutBtn");
+  logoutButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      localStorage.removeItem("user");
+      window.location.href = "login.html";
+    });
+  });
 });
+
+// Console message helper
+function showConsoleMessage(message, color = "red") {
+  const consoleDiv = document.getElementById("console-message");
+  if (consoleDiv) {
+    consoleDiv.textContent = message;
+    consoleDiv.style.color = color;
+  }
+}
