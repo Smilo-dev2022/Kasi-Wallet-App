@@ -25,7 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
     set("userEmail", user.email);
     set("userPhone", user.phone);
     set("userBalance", user.balance);
-  }
+  }const greetName = document.getElementById("greetName");
+if (greetName) {
+  greetName.textContent = user.name;
+}
+
 });
 // Redirect to login if user not logged in
 const protectedPages = ["index.html", "profile.html"];
