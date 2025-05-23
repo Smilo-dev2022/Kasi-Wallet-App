@@ -78,3 +78,16 @@ footer {
         max-width: none;
     }
 }
+button {
+  padding: 10px 20px;
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}

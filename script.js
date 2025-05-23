@@ -1,28 +1,38 @@
-// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  // Simple login simulation
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      localStorage.setItem("user", JSON.stringify({
+        name: "Thabo M.",
+        email: "thabo@example.com",
+        phone: "072-123-4567",
+        balance: "459.00"
+      }));
+      window.location.href = "index.html"; // Go to dashboard
+    });
+  }
 
-// Attach click handlers to buttons
-document.getElementById('sendBtn').addEventListener('click', sendMoney);
-document.getElementById('receiveBtn').addEventListener('click', receiveMoney);
-document.getElementById('airtimeBtn').addEventListener('click', buyAirtime);
-document.getElementById('scanBtn').addEventListener('click', scanQRCode);
-
-function sendMoney() {
-    console.log("Send Money clicked - calling Moment PayCo API (simulated)");
-    alert("Simulating Send Money via Moment PayCo API...");
-    // TODO: Replace with actual API integration
+  // Load profile info
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user) {
+    const set = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
+    set("userName", user.name);
+    set("userEmail", user.email);
+    set("userPhone", user.phone);
+    set("userBalance", user.balance);
+  }
+});
+// Redirect to login if user not logged in
+const protectedPages = ["index.html", "profile.html"];
+if (protectedPages.includes(window.location.pathname.split("/").pop()) && !localStorage.getItem("user")) {
+  window.location.href = "login.html";
 }
-function receiveMoney() {
-    console.log("Receive Money clicked - calling Moment PayCo API (simulated)");
-    alert("Simulating Receive Money via Moment PayCo API...");
-    // TODO: Replace with actual API integration
-}
-function buyAirtime() {
-    console.log("Buy Airtime clicked - calling Moment PayCo API (simulated)");
-    alert("Simulating Buy Airtime via Moment PayCo API...");
-    // TODO: Replace with actual API integration
-}
-function scanQRCode() {
-    console.log("Scan QR Code clicked - calling Moment PayCo API (simulated)");
-    alert("Simulating Scan QR Code via Moment PayCo API...");
-    // TODO: Replace with actual API integration
+function logout() {
+  localStorage.removeItem("user");
+  window.location.href = "login.html";
 }
