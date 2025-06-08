@@ -1,0 +1,20 @@
+{
+  "name": "kasi-wallet-app",
+  "version": "1.0.0",
+  "description": "Simple wallet app with basic front-end and express backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "qrcode.react": "^1.0.0",
+    "twilio": "^4.15.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  }
+}

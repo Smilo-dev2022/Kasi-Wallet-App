@@ -278,3 +278,12 @@ button:hover {
   font-size: 14px;
   text-align: center;
 }
+
+.wallet-form {
+  margin-top: 15px;
+}
+
+.wallet-form input {
+  margin-right: 5px;
+  padding: 5px;
+}

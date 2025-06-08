@@ -1,4 +1,3 @@
-<!-- profile.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +6,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <body>
   <header class="wallet-header">
-    <img src="assets/KASI WALLET LOGO.png" alt="Kasi Wallet Logo" class="logo" />
+    <img src="assets/logo.png" alt="Kasi Wallet Logo" class="logo" />
     <h1>Kasi Wallet</h1>
   </header>
 
@@ -18,18 +16,43 @@
       <h2>Welcome, <span id="userName" style="color: var(--color-primary);">User</span></h2>
       <p><strong>Email:</strong> <span id="userEmail">---</span></p>
       <p><strong>Phone:</strong> <span id="userPhone">---</span></p>
-      <p><strong>Balance:</strong> R<span id="userBalance">0.00</span></p>
+      <p><strong>Balance:</strong> <span id="userBalance">R0.00</span></p>
     </div>
 
-    <button onclick="logout()" class="btn-primary" style="margin-top: 20px;">Logout</button>
+    <h3>Recent Transactions</h3>
+    <table style="width:100%;text-align:left;" id="txnTable">
+      <thead>
+        <tr><th>Date</th><th>Type</th><th>Amount</th></tr>
+      </thead>
+      <tbody id="txnBody"></tbody>
+    </table>
+
+    <h3>Send Money</h3>
+    <form id="transferForm" class="wallet-form">
+      <input type="email" id="transferEmail" placeholder="Recipient Email" required>
+      <input type="number" step="0.01" id="transferAmount" placeholder="Amount" required>
+      <button type="submit" class="btn-primary">Transfer</button>
+    </form>
+
+    <h3>Create Voucher</h3>
+    <form id="voucherForm" class="wallet-form">
+      <input type="number" step="0.01" id="voucherAmount" placeholder="Amount" required>
+      <input type="tel" id="voucherPhone" placeholder="Phone (optional)">
+      <button type="submit" class="btn-primary">Generate</button>
+      <p id="voucherCode"></p>
+    </form>
+
+    <h3>Redeem Voucher</h3>
+    <form id="redeemForm" class="wallet-form">
+      <input type="text" id="redeemCode" placeholder="Voucher Code" required>
+      <button type="submit" class="btn-primary">Redeem</button>
+      <p id="redeemMessage"></p>
+    </form>
+
+    <button class="btn-primary logoutBtn" style="margin-top: 20px;">Logout</button>
   </main>
 
   <footer>&copy; 2025 Kasi Wallet</footer>
-
   <script src="script.js"></script>
-</body>
-
-
-  <script src="script.js"></script>
-</body>
+  </body>
 </html>

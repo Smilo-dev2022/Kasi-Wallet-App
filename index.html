@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Kasi Wallet</title>
-    <!-- Viewport meta for mobile responsiveness :contentReference[oaicite:2]{index=2} -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kasi Wallet</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="wallet-header">
@@ -16,13 +15,13 @@
   <main class="wallet-main">
     <div class="wallet-box">
       <p><strong>Wallet ID:</strong> 1234-5678-9012</p>
-      <p><strong>Balance:</strong> R0.00</p>
+      <p><strong>Balance:</strong> <span id="userBalance">R0.00</span></p>
     </div>
 
     <div class="action-buttons">
-      <button class="btn-primary">Send Money</button>
+      <button class="btn-primary" id="sendMoneyBtn">Send Money</button>
       <button class="btn-primary">Receive Money</button>
-      <button class="btn-primary">Buy Airtime</button>
+      <button class="btn-primary" id="buyAirtimeBtn">Buy Airtime</button>
       <button class="btn-primary">Scan QR Code</button>
     </div>
 
@@ -32,19 +31,6 @@
   </main>
 
   <footer>&copy; 2025 Kasi Wallet</footer>
-</body>
-
-        </section>
-    </main><div style="margin-top: 20px; text-align: center;">
-  <div style="margin-top: 20px; text-align: center;">
-  <a href="profile.html" style="color: var(--color-primary); font-weight: bold;">View Profile</a>
-</div>
- bold;">View My Profile</a>
-</div>
-
-    <footer>
-        <p>&copy; 2025 Kasi Wallet</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
+  <script src="script.js"></script>
+  </body>
 </html>
